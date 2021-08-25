@@ -1,0 +1,43 @@
+*Iniciar la consola de GCLOUD
+gcloud init
+
+*Listar los projectos con Project ID, nombre y Number Project
+gcloud projects list
+
+*Borrar un proyecto segun su ID
+gcloud projects delete  [..your-project-id..]
+
+*Ubicar la consola de Gcloud en un projecto especifico
+gcloud config set project [..your-project-id..]
+
+*Crear una APP para el deploy del engine
+glcloud create app 
+
+*Deploy del engine en el APP, se debe estar ubicado en la carpeta del proyecto que previamente debe tener configurado un archivo app.yml
+gcloud app deploy
+
+*Ver la APP en el browser
+gcloud app browse
+
+cloud_sql_proxy.exe -instances="[YOUR_INSTANCE_CONNECTION_NAME]"=tcp:3306
+
+-SQL-
+*Verificar que la instancia SQL este creada y ver su informacion
+gcloud sql instances describe [YOUR_INSTANCE_NAME]
+ 
+
+-VERSIONS-
+
+Una vez que cargue un versionen Appengine, puede cambiar entre ellos fácilmente.
+
+Digamos que el nombre de su aplicación es myapp, que actualmente ejecuta la versión 1. También ha subido una versión llamada 2-testing. Puede acceder a su aplicación predeterminada (con la versión 1) accediendomyapp.appspot.com
+
+Si desea acceder a sus versiones de forma explícita, solo necesita acceder <version_name>-dot-myapp.appspot.com. Siguiendo el ejemplo sería:
+
+1-dot-myapp.appspot.com o 2-testing-dot-myapp.appspot.com
+
+El -dot-es equivalente a <version>.<appname>, pero le permite servir correctamente una aplicación segura con SSL
+
+Puede marcar cualquier versión que desee como default(publicación myapp.appspot.com) utilizando la consola de administración
+
+editar: esta es la página de documentación oficial que habla de dominios y subdominios en Appengine
